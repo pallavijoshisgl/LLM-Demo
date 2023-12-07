@@ -1,0 +1,108 @@
+<html>
+<head>
+    <style>
+        /* Add some style to the chat window */
+        #chat-window {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            overflow-y: scroll;
+            margin: auto;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Add some style to the chat messages list */
+        #chat-messages {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Add some style to the chat messages list items */
+        #chat-messages li {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Add some style to the person 1 messages */
+        #chat-messages li.person1 {
+            background-color: rgba(0, 122, 120, 0.5);
+            color: black;
+            text-align: left;
+        }
+
+        /* Add some style to the person 2 messages */
+        #chat-messages li.person2 {
+            background-color: rgba(229, 109, 177, 0.5);
+            color: black;
+            text-align: left;
+        }
+
+        /* Add some style to the person 3 messages */
+        #chat-messages li.person3 {
+            background-color: rgba(220, 88, 42, 0.5);
+            color: black;
+            text-align: left;
+        }
+
+        /* Add some style to the person 4 messages */
+        #chat-messages li.person4 {
+            background-color: rgba(211, 39, 62, 0.5);
+            color: black;
+            text-align: left;
+        }
+
+        /* Add some style to the person 5 messages */
+        #chat-messages li.person5 {
+            background-color: rgba(29, 66, 137, 0.5);
+            color: black;
+            text-align: left;
+        }
+
+        /* Add some style to the person 6 messages */
+        #chat-messages li.person6 {
+            background-color: rgba(255, 200, 69, 0.5);
+            color: black;
+            text-align: left;
+        }
+
+        /* Add some style to the buttons */
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Add some color to the buttons */
+        #button1 {
+            background-color: lightgreen;
+            color: black;
+        }
+
+        #button2 {
+            background-color: lightblue;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Create a div element for the chat window -->
+    <div id="chat-window">
+        <!-- Create a ul element for the chat messages list -->
+        <ul id="chat-messages">
+            
+        </ul>
+    </div>
+    <!-- Create two button elements with different id attributes -->
+    <button id="button1">Final answers only</button>
+    <button id="button2">Full CoT</button>
+    <!-- Link the script.js file that contains the JavaScript code -->
+    <script src="script.js"></script>
+</body>
+</html>
