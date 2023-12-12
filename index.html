@@ -2,12 +2,31 @@
 <head>
     <style>
         /* Add some style to the chat window */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Set height to 100% of the viewport height */
+            margin: 0; /* Remove default body margin */
+        }
+
+        #container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
         #chat-window {
-            width: 500px;
-            height: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            bottom: 50%;
+            border: 3px solid black; 
+            transform: translate(-50%, -50%);
+            width: 50%; /* Set the width to 100% to fill the container */
+            height: 30%; /* Set the height to 100% to fill the container */
             border: 1px solid black;
             overflow-y: scroll;
-            margin: auto;
             padding: 10px;
             font-family: Arial, sans-serif;
         }
@@ -89,19 +108,99 @@
             background-color: lightblue;
             color: black;
         }
+
+        .image-container img {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+          
+            transform-origin: center bottom; /* Set the transform origin to the bottom center */
+        }
+
+        .image-container {
+            width: 60px;
+            height: 60px;
+            top:50%;
+            right:0;
+            transform: translateY(-50%);
+        }
+
+        #button-container {
+            position: absolute;
+            bottom: 40;
+            left: 0;
+            right: 0;
+            height: 40px; /* Set the height of the button container */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        /* .bubble { 
+            position: absolute;
+            background-color: black;
+            border-radius: 50%;
+            padding: 5px;
+            font-size: 14px;
+            text-align: center;
+            transform: translate(-50%,-50%);
+        }
+        */
+
+        .image1 { transform: rotate(0deg) translateX(540px) translateY(-160px) ; width: 60px; height :60px}
+        .image2 { transform: rotate(0deg) translateX(540px) translateY(-80px) ; width: 60px; height :60px }
+        .image3 { transform: rotate(0deg) translateX(540px) translateY(0px) ; width: 60px; height :60px }
+        .image4 { transform: rotate(0deg) translateX(540px) translateY(80px) ; width: 60px; height :60px}
+        .image5 { transform: rotate(0deg) translateX(540px) translateY(160px) ; width: 60px; height :60px}
+        .image6 { transform: rotate(0deg) translateX(540px) translateY(240px) ; width: 60px; height :60px}
+        
+        /* Adjust bubble positions */
+        .bubble1 { transform: rotate(0deg) translateX(470px) translateY(-160px) ; width: 30px; height :30px }
+        .bubble2 { transform: rotate(0deg) translateX(470px) translateY(-80px) ;width: 30px; height :30px }
+        .bubble3 { transform: rotate(0deg) translateX(470px) translateY(0px) ;width: 30px; height :30px }
+        .bubble4 { transform: rotate(0deg) translateX(470px) translateY(80px) ; width: 30px; height :30px }
+        .bubble5 { transform: rotate(0deg) translateX(470px) translateY(160px) ;width: 30px; height :30px }
+        .bubble6 { transform: rotate(0deg) translateX(470px) translateY(240px) ;width: 30px; height :30px }
+       /* .image-container img:nth-child(1) { transform: rotate(0deg); }
+        .image-container img:nth-child(2) { transform: rotate(60deg); }
+        .image-container img:nth-child(3) { transform: rotate(120deg); }
+        .image-container img:nth-child(4) { transform: rotate(180deg); }
+        .image-container img:nth-child(5) { transform: rotate(240deg); }*/
+
+        
     </style>
 </head>
 <body>
     <!-- Create a div element for the chat window -->
+    <div id="container">
     <div id="chat-window">
         <!-- Create a ul element for the chat messages list -->
         <ul id="chat-messages">
             
         </ul>
+        
+    </div>
+    <div class="image-container">
+        <img src="/images/ImgGreen.jpeg" alt="Icon Green"  class="image1">
+        <img src="/images/ImgPink.jpeg" alt="Icon Pink"  class="image2">
+        <img src="/images/ImgOrange.jpeg" alt="Icon Orange"  class="image3">
+        <img src="/images/ImgRed.jpeg" alt="Icon Red"  class="image4">
+        <img src="/images/ImgBlue.jpeg" alt="Icon Blue" class="image5">
+        <img src="/images/ImgYellow.jpeg" alt="Icon Yellow"  class="image6">
+
+        <img src="/images/BubbleImg.png" class="bubble1">
+        <img src="/images/BubbleImg.png" class="bubble2">
+        <img src="/images/BubbleImg.png" class="bubble3">
+        <img src="/images/BubbleImg.png" class="bubble4">
+        <img src="/images/BubbleImg.png" class="bubble5">
+        <img src="/images/BubbleImg.png" class="bubble6">
+    </div>
     </div>
     <!-- Create two button elements with different id attributes -->
-    <button id="button1">Final answers only</button>
-    <button id="button2">Full CoT</button>
+    <div id="button-container">
+        <button id="button1">Final answers only</button>
+        <button id="button2">Full CoT</button>
+    </div>
     <!-- Link the script.js file that contains the JavaScript code -->
     <script src="script.js"></script>
 </body>

@@ -113,14 +113,24 @@ var messageType = "";
 
 
 // Define a function to display a message
-function displayMessage() {
+function displayMessage() {  
     // Check if there are more messages to display
     if (messageIndex < messages.length) {
         // Get the current message from the array
         var message = messages[messageIndex];
-        // Check if the current message type matches the previous one
-        if (message.type == messageType) {
-            // Increment the message index by one
+        
+        //code for image enable and disable
+        const imageContainer = document.querySelector('.image-container');
+        const images = imageContainer.querySelectorAll('img');
+       // const bubbles = imageContainer.querySelectorAll('.bubble');
+   
+        //invisible all images
+        images.forEach(img => img.style.display = 'none');
+        //bubbles.forEach(bubble => bubble.style.display = 'none');
+        var message = messages[messageIndex];
+        
+        if (message.type == messageType) {         
+            // Increment the message index by one           
             messageIndex++;
             // Check if there are more messages to display
             if (messageIndex < messages.length) {
@@ -133,6 +143,9 @@ function displayMessage() {
         }
         // Update the current message type
         messageType = message.type;
+
+        //show image
+        showImageAsMessageType(message.type,images);
         // Create a list item element for the message
         var li = document.createElement("li");
         // Add a class to the list item element based on the message type
@@ -145,6 +158,68 @@ function displayMessage() {
     }
 }
 
+function showImageAsMessageType(messageType,images)
+{
+    const translateXValueForIcon=-590;
+    const translateYValue=60;
+    const translateXValue=-540;
+    const translateYValueForBubble=40;
+    if(messageType=="person1")
+        {
+            images[0].style.display = 'block';
+            images[0].style.transform=`translate(${translateXValueForIcon}px, ${translateYValue}px)`;
+            const bubble1=document.querySelector('.bubble1');
+            bubble1.style.display='block';
+            bubble1.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
+            //bubbles[0].style.display = 'block';
+        }
+        else if(messageType=="person2")
+        {
+            images[1].style.display = 'block';
+            images[1].style.transform=`translate(${translateXValueForIcon}px, ${translateYValue}px)`;
+            const bubble2=document.querySelector('.bubble2');
+            bubble2.style.display='block';
+            bubble2.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
+            //bubbles[1].style.display = 'block';
+        }
+        else if(messageType=="person3")
+        {
+            images[2].style.display = 'block';
+            images[2].style.transform=`translate(${translateXValueForIcon}px, ${translateYValue}px)`;
+            const bubble3=document.querySelector('.bubble3');
+            bubble3.style.display='block';
+            bubble3.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
+            //bubbles[2].style.display = 'block';
+        }
+        else if(messageType=="person4")
+        {
+            images[3].style.display = 'block';
+            images[3].style.transform=`translate(${translateXValueForIcon}px, ${translateYValue}px)`;
+            const bubble4=document.querySelector('.bubble4');
+            bubble4.style.display='block';
+            bubble4.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
+           // bubbles[3].style.display = 'block';
+        }
+        else if(messageType=="person5")
+        {
+            images[4].style.display = 'block';
+            images[4].style.transform=`translate(${translateXValueForIcon}px, ${translateYValue}px)`;
+            const bubble5=document.querySelector('.bubble5');
+            bubble5.style.display='block';
+            bubble5.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
+           // bubbles[4].style.display = 'block';
+        }
+        else{
+            images[5].style.display = 'block';
+            images[5].style.transform=`translate(${translateXValueForIcon}px, ${translateYValue}px)`;
+            const bubble6=document.querySelector('.bubble6');
+            bubble6.style.display='block';
+            bubble6.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
+           // bubbles[5].style.display = 'block';
+        }
+
+}
+
 // Define a function to play the messages character by character
 function playMessages() {
     // Check if there are more messages to display
@@ -153,6 +228,7 @@ function playMessages() {
         var message = messages[messageIndex];
         // Get the current character from the message text by using substring method with charIndex and charIndex + 1 as arguments 
         var char = message.text.substring(charIndex, charIndex + 1);
+        
         // Append the character to last list item element in chat messages list using innerHTML property 
         document.getElementById("chat-messages").lastChild.innerHTML += char;
         // Scroll to the bottom of the chat messages list
