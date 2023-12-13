@@ -25,7 +25,8 @@
             transform: translate(-50%, -50%);
             width: 50%; /* Set the width to 100% to fill the container */
             height: 30%; /* Set the height to 100% to fill the container */
-            border: 1px solid black;
+            border-radius:10px;
+            background-color: #f8f8f8;
             overflow-y: scroll;
             padding: 10px;
             font-family: Arial, sans-serif;
@@ -89,13 +90,14 @@
 
         /* Add some style to the buttons */
         button {
-            display: block;
+            display: inline-block;
             margin: 10px auto;
             padding: 10px;
             border: none;
             border-radius: 10px;
             font-size: 20px;
             cursor: pointer;
+            
         }
 
         /* Add some color to the buttons */
@@ -126,14 +128,11 @@
         }
 
         #button-container {
+            text-align: center; /* Center the buttons within the container */
             position: absolute;
-            bottom: 40;
-            left: 0;
-            right: 0;
-            height: 40px; /* Set the height of the button container */
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+            bottom: 150px; /* Adjust the top position to move it up */
+            left: 50%;
+            transform: translateX(-50%); 
         }
 
         /* .bubble { 
