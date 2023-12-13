@@ -124,8 +124,7 @@ function displayMessage() {
         const images = imageContainer.querySelectorAll('img');
        // const bubbles = imageContainer.querySelectorAll('.bubble');
    
-        //invisible all images
-        images.forEach(img => img.style.display = 'none');
+        
         //bubbles.forEach(bubble => bubble.style.display = 'none');
         var message = messages[messageIndex];
         
@@ -143,7 +142,8 @@ function displayMessage() {
         }
         // Update the current message type
         messageType = message.type;
-
+        //invisible all images
+        images.forEach(img => img.style.display = 'none');
         //show image
         showImageAsMessageType(message.type,images);
         // Create a list item element for the message
