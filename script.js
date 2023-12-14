@@ -111,6 +111,18 @@ var messageDone = false;
 // Define a variable to store the current message type
 var messageType = "";
 
+//define a dictinary for icons
+let myDictionary = {
+    'person3' : '#dc5828',
+    'person2' : '#ff5ab9',
+    'person4' : '#d3273d',
+    'person6' : '#ffc945',
+    'person5' : '#1c4388',
+    'person1' : '#017978'
+}
+
+
+
 
 // Define a function to display a message
 function displayMessage() {  
@@ -171,6 +183,7 @@ function showImageAsMessageType(messageType,images)
             const bubble1=document.querySelector('.bubble1');
             bubble1.style.display='block';
             bubble1.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
+            
             //bubbles[0].style.display = 'block';
         }
         else if(messageType=="person2")
@@ -180,6 +193,7 @@ function showImageAsMessageType(messageType,images)
             const bubble2=document.querySelector('.bubble2');
             bubble2.style.display='block';
             bubble2.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
+           
             //bubbles[1].style.display = 'block';
         }
         else if(messageType=="person3")
@@ -189,6 +203,7 @@ function showImageAsMessageType(messageType,images)
             const bubble3=document.querySelector('.bubble3');
             bubble3.style.display='block';
             bubble3.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
+            
             //bubbles[2].style.display = 'block';
         }
         else if(messageType=="person4")
@@ -198,6 +213,8 @@ function showImageAsMessageType(messageType,images)
             const bubble4=document.querySelector('.bubble4');
             bubble4.style.display='block';
             bubble4.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
+            
+            
            // bubbles[3].style.display = 'block';
         }
         else if(messageType=="person5")
@@ -207,6 +224,7 @@ function showImageAsMessageType(messageType,images)
             const bubble5=document.querySelector('.bubble5');
             bubble5.style.display='block';
             bubble5.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
+           
            // bubbles[4].style.display = 'block';
         }
         else{
@@ -215,8 +233,14 @@ function showImageAsMessageType(messageType,images)
             const bubble6=document.querySelector('.bubble6');
             bubble6.style.display='block';
             bubble6.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
+            
+            
            // bubbles[5].style.display = 'block';
         }
+        // JavaScript to change the border color
+        const chatWindow = document.getElementById('chat-window');
+        // Change the border color to red
+        chatWindow.style.borderColor = myDictionary[messageType];
 
 }
 
