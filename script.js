@@ -162,7 +162,7 @@ function showImageAsMessageType(messageType,images)
 {
     const translateXValueForIcon=-590;
     const translateYValue=60;
-    const translateXValue=-540;
+    const translateXValue=-520;
     const translateYValueForBubble=40;
     if(messageType=="person1")
         {
