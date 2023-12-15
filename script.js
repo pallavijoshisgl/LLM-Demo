@@ -154,6 +154,7 @@ function displayMessage() {
         }
         // Update the current message type
         messageType = message.type;
+        
         //invisible all images
         images.forEach(img => img.style.display = 'none');
         //show image
@@ -162,12 +163,38 @@ function displayMessage() {
         var li = document.createElement("li");
         // Add a class to the list item element based on the message type
         li.classList.add(message.type);
+
+        //enableOnlyParticularMessage
+        enableMessage(message.type);
         // Append the list item element to the chat messages list
         document.getElementById("chat-messages").appendChild(li);
         // Scroll to the bottom of the chat messages list
         document.getElementById("chat-messages").scrollTop = document.getElementById("chat-messages").scrollHeight;
         // Do not increment the message index by one here
     }
+}
+
+function enableMessage(messageType)
+{
+    
+    //Get all chat messages
+    const chatMessages = document.querySelectorAll('#chat-messages li');
+
+    //Loop through each message and enable/disable accordingly
+    chatMessages.forEach(message => {
+        if (message.classList.contains(messageType)) {
+            message.classList.add('enabled');
+            message.classList.remove('disabled');
+        } else {
+            // Disable other message types
+            message.classList.remove('enabled');
+            message.classList.add('disabled');
+        }
+        
+    });
+
+    
+
 }
 
 function showImageAsMessageType(messageType,images)
@@ -184,6 +211,7 @@ function showImageAsMessageType(messageType,images)
             bubble1.style.display='block';
             bubble1.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
             
+            
             //bubbles[0].style.display = 'block';
         }
         else if(messageType=="person2")
@@ -193,6 +221,7 @@ function showImageAsMessageType(messageType,images)
             const bubble2=document.querySelector('.bubble2');
             bubble2.style.display='block';
             bubble2.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
+            
            
             //bubbles[1].style.display = 'block';
         }
