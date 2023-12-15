@@ -155,8 +155,12 @@ function displayMessage() {
         // Update the current message type
         messageType = message.type;
         
-        //invisible all images
-        images.forEach(img => img.style.display = 'none');
+        //disable all images
+        const allImages = document.querySelectorAll('.image-container img');
+        allImages.forEach(image => {
+             image.classList.add('disabled-image');
+         });
+        //images.forEach(img => img.style.display = 'none');
         //show image
         showImageAsMessageType(message.type,images);
         // Create a list item element for the message
@@ -203,25 +207,57 @@ function showImageAsMessageType(messageType,images)
     const translateYValue=60;
     const translateXValue=-520;
     const translateYValueForBubble=40;
+    const bubble1=document.querySelector('.bubble1');
+    const bubble2=document.querySelector('.bubble2');
+    const bubble3=document.querySelector('.bubble3');
+    const bubble4=document.querySelector('.bubble4');
+    const bubble5=document.querySelector('.bubble5');
+    const bubble6=document.querySelector('.bubble6');
     if(messageType=="person1")
         {
+            
             images[0].style.display = 'block';
             images[0].style.transform=`translate(${translateXValueForIcon}px, ${translateYValue}px)`;
+            images[0].classList.remove('disabled-image');
             const bubble1=document.querySelector('.bubble1');
             bubble1.style.display='block';
             bubble1.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
-            
-            
+            bubble1.classList.remove('disabled-image');
+            //images
+            images[1].style.transform=`translate(${540}px, ${-80}px)`;
+            images[2].style.transform=`translate(${540}px, ${0}px)`;
+            images[3].style.transform=`translate(${540}px, ${80}px)`;
+            images[4].style.transform=`translate(${540}px, ${160}px)`;
+            images[5].style.transform=`translate(${540}px, ${240}px)`;
+            //bubbles
+            bubble2.style.transform=`translate(${470}px, ${-80}px)`;
+            bubble3.style.transform=`translate(${470}px, ${0}px)`;
+            bubble4.style.transform=`translate(${470}px, ${80}px)`;
+            bubble5.style.transform=`translate(${470}px, ${160}px)`;
+            bubble6.style.transform=`translate(${470}px, ${240}px)`;
             //bubbles[0].style.display = 'block';
         }
         else if(messageType=="person2")
-        {
+        {           
             images[1].style.display = 'block';
             images[1].style.transform=`translate(${translateXValueForIcon}px, ${translateYValue}px)`;
+            images[1].classList.remove('disabled-image');
             const bubble2=document.querySelector('.bubble2');
             bubble2.style.display='block';
             bubble2.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
-            
+            bubble2.classList.remove('disabled-image');
+            //images
+            images[0].style.transform=`translate(${540}px, ${-160}px)`;
+            images[2].style.transform=`translate(${540}px, ${0}px)`;
+            images[3].style.transform=`translate(${540}px, ${80}px)`;
+            images[4].style.transform=`translate(${540}px, ${160}px)`;
+            images[5].style.transform=`translate(${540}px, ${240}px)`;
+            //bubbles
+            bubble1.style.transform=`translate(${470}px, ${-160}px)`;
+            bubble3.style.transform=`translate(${470}px, ${0}px)`;
+            bubble4.style.transform=`translate(${470}px, ${80}px)`;
+            bubble5.style.transform=`translate(${470}px, ${160}px)`;
+            bubble6.style.transform=`translate(${470}px, ${240}px)`;
            
             //bubbles[1].style.display = 'block';
         }
@@ -229,39 +265,97 @@ function showImageAsMessageType(messageType,images)
         {
             images[2].style.display = 'block';
             images[2].style.transform=`translate(${translateXValueForIcon}px, ${translateYValue}px)`;
+            images[2].classList.remove('disabled-image');
             const bubble3=document.querySelector('.bubble3');
             bubble3.style.display='block';
             bubble3.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
+            bubble3.classList.remove('disabled-image');
+            //images
+            images[0].style.transform=`translate(${540}px, ${-160}px)`;
+            images[1].style.transform=`translate(${540}px, ${-80}px)`;
+            images[3].style.transform=`translate(${540}px, ${80}px)`;
+            images[4].style.transform=`translate(${540}px, ${160}px)`;
+            images[5].style.transform=`translate(${540}px, ${240}px)`;
+            //bubbles
+            bubble1.style.transform=`translate(${470}px, ${-160}px)`;
+            bubble2.style.transform=`translate(${470}px, ${-80}px)`;
+            bubble4.style.transform=`translate(${470}px, ${80}px)`;
+            bubble5.style.transform=`translate(${470}px, ${160}px)`;
+            bubble6.style.transform=`translate(${470}px, ${240}px)`;
             
             //bubbles[2].style.display = 'block';
         }
         else if(messageType=="person4")
-        {
+        {           
             images[3].style.display = 'block';
             images[3].style.transform=`translate(${translateXValueForIcon}px, ${translateYValue}px)`;
+            images[3].classList.remove('disabled-image');
             const bubble4=document.querySelector('.bubble4');
             bubble4.style.display='block';
             bubble4.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
+            bubble4.classList.remove('disabled-image');
+            //images
+            images[0].style.transform=`translate(${540}px, ${-160}px)`;
+            images[1].style.transform=`translate(${540}px, ${-80}px)`;
+            images[2].style.transform=`translate(${540}px, ${0}px)`;
+            images[4].style.transform=`translate(${540}px, ${160}px)`;
+            images[5].style.transform=`translate(${540}px, ${240}px)`;
+            //bubbles
+            bubble1.style.transform=`translate(${470}px, ${-160}px)`;
+            bubble2.style.transform=`translate(${470}px, ${-80}px)`;
+            bubble3.style.transform=`translate(${470}px, ${0}px)`;
+            bubble5.style.transform=`translate(${470}px, ${160}px)`;
+            bubble6.style.transform=`translate(${470}px, ${240}px)`;
             
             
            // bubbles[3].style.display = 'block';
         }
         else if(messageType=="person5")
-        {
+        {         
             images[4].style.display = 'block';
             images[4].style.transform=`translate(${translateXValueForIcon}px, ${translateYValue}px)`;
+            images[4].classList.remove('disabled-image');
             const bubble5=document.querySelector('.bubble5');
             bubble5.style.display='block';
             bubble5.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
+            bubble5.classList.remove('disabled-image');
+            //images
+            images[0].style.transform=`translate(${540}px, ${-160}px)`;
+            images[1].style.transform=`translate(${540}px, ${-80}px)`;
+            images[2].style.transform=`translate(${540}px, ${0}px)`;
+            images[3].style.transform=`translate(${540}px, ${80}px)`;
+            images[5].style.transform=`translate(${540}px, ${240}px)`;
+            //bubbles
+            bubble1.style.transform=`translate(${470}px, ${-160}px)`;
+            bubble2.style.transform=`translate(${470}px, ${-80}px)`;
+            bubble3.style.transform=`translate(${470}px, ${0}px)`;
+            bubble4.style.transform=`translate(${470}px, ${80}px)`;
+            bubble6.style.transform=`translate(${470}px, ${240}px)`;
+            
            
            // bubbles[4].style.display = 'block';
         }
         else{
             images[5].style.display = 'block';
             images[5].style.transform=`translate(${translateXValueForIcon}px, ${translateYValue}px)`;
+            images[5].classList.remove('disabled-image');
             const bubble6=document.querySelector('.bubble6');
             bubble6.style.display='block';
             bubble6.style.transform=`translate(${translateXValue}px, ${translateYValueForBubble}px)`;
+            bubble6.classList.remove('disabled-image');
+            //images
+            images[0].style.transform=`translate(${540}px, ${-160}px)`;
+            images[1].style.transform=`translate(${540}px, ${-80}px)`;
+            images[2].style.transform=`translate(${540}px, ${0}px)`;
+            images[3].style.transform=`translate(${540}px, ${80}px)`;
+            images[4].style.transform=`translate(${540}px, ${160}px)`;
+            //bubbles
+            bubble1.style.transform=`translate(${470}px, ${-160}px)`;
+            bubble2.style.transform=`translate(${470}px, ${-80}px)`;
+            bubble3.style.transform=`translate(${470}px, ${0}px)`;
+            bubble4.style.transform=`translate(${470}px, ${80}px)`;
+            bubble5.style.transform=`translate(${470}px, ${160}px)`;
+            
             
             
            // bubbles[5].style.display = 'block';
