@@ -140,8 +140,8 @@ function displayMessage() {
         //bubbles.forEach(bubble => bubble.style.display = 'none');
         var message = messages[messageIndex];
         
-        if (message.type == messageType) {         
-            // Increment the message index by one           
+        if (message.type == messageType) {  
+                        // Increment the message index by one           
             messageIndex++;
             // Check if there are more messages to display
             if (messageIndex < messages.length) {
@@ -169,7 +169,7 @@ function displayMessage() {
         li.classList.add(message.type);
 
         //enableOnlyParticularMessage
-        enableMessage(message.type);
+        enableMessage(messageIndex);
         // Append the list item element to the chat messages list
         document.getElementById("chat-messages").appendChild(li);
         // Scroll to the bottom of the chat messages list
@@ -178,15 +178,15 @@ function displayMessage() {
     }
 }
 
-function enableMessage(messageType)
+function enableMessage(messageIndex)
 {
     
     //Get all chat messages
     const chatMessages = document.querySelectorAll('#chat-messages li');
 
     //Loop through each message and enable/disable accordingly
-    chatMessages.forEach(message => {
-        if (message.classList.contains(messageType)) {
+    chatMessages.forEach((message, index) => {
+        if (index == messageIndex) {
             message.classList.add('enabled');
             message.classList.remove('disabled');
         } else {
