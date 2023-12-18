@@ -134,14 +134,10 @@ function displayMessage() {
         //code for image enable and disable
         const imageContainer = document.querySelector('.image-container');
         const images = imageContainer.querySelectorAll('img');
-       // const bubbles = imageContainer.querySelectorAll('.bubble');
-   
-        
-        //bubbles.forEach(bubble => bubble.style.display = 'none');
         var message = messages[messageIndex];
         
         if (message.type == messageType) {  
-                        // Increment the message index by one           
+            // Increment the message index by one           
             messageIndex++;
             // Check if there are more messages to display
             if (messageIndex < messages.length) {
@@ -160,7 +156,7 @@ function displayMessage() {
         allImages.forEach(image => {
              image.classList.add('disabled-image');
          });
-        //images.forEach(img => img.style.display = 'none');
+        
         //show image
         showImageAsMessageType(message.type,images);
         // Create a list item element for the message
@@ -235,7 +231,7 @@ function showImageAsMessageType(messageType,images)
             bubble4.style.transform=`translate(${470}px, ${80}px)`;
             bubble5.style.transform=`translate(${470}px, ${160}px)`;
             bubble6.style.transform=`translate(${470}px, ${240}px)`;
-            //bubbles[0].style.display = 'block';
+            
         }
         else if(messageType=="person2")
         {           
@@ -259,7 +255,7 @@ function showImageAsMessageType(messageType,images)
             bubble5.style.transform=`translate(${470}px, ${160}px)`;
             bubble6.style.transform=`translate(${470}px, ${240}px)`;
            
-            //bubbles[1].style.display = 'block';
+            
         }
         else if(messageType=="person3")
         {
@@ -283,7 +279,7 @@ function showImageAsMessageType(messageType,images)
             bubble5.style.transform=`translate(${470}px, ${160}px)`;
             bubble6.style.transform=`translate(${470}px, ${240}px)`;
             
-            //bubbles[2].style.display = 'block';
+            
         }
         else if(messageType=="person4")
         {           
@@ -308,7 +304,7 @@ function showImageAsMessageType(messageType,images)
             bubble6.style.transform=`translate(${470}px, ${240}px)`;
             
             
-           // bubbles[3].style.display = 'block';
+           
         }
         else if(messageType=="person5")
         {         
@@ -333,7 +329,7 @@ function showImageAsMessageType(messageType,images)
             bubble6.style.transform=`translate(${470}px, ${240}px)`;
             
            
-           // bubbles[4].style.display = 'block';
+           
         }
         else{
             images[5].style.display = 'block';
@@ -358,7 +354,7 @@ function showImageAsMessageType(messageType,images)
             
             
             
-           // bubbles[5].style.display = 'block';
+           
         }
         // JavaScript to change the border color
         const chatWindow = document.getElementById('chat-window');
