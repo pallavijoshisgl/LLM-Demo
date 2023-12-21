@@ -5,32 +5,73 @@
         /* Add some style to the chat window */
         body {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh; /* Set height to 100% of the viewport height */
-            margin: 0; /* Remove default body margin */
+            justify-content: flex-start;
+            height: 300vh; /* Set height to 100% of the viewport height */
+            margin: 20px; /* Remove default body margin */
+            overflow: auto;
         }
 
         #container {
             display: flex;
             flex-direction: row;
-            align-items: center;
+            align-items: flex-start;
+            margin-top: 20px;
+            margin-left: 20px;
+            
+        }
+
+        .image-container img {
+           align-items: center; 
+            width: 60px;
+            height: 60px; 
+            transform-origin: center bottom; /* Set the transform origin to the bottom center */
+            margin-bottom: 10px;
+            
+        }
+
+        .image-container {
+            /* width: 60px;
+            height: 60px;
+            top:50%;
+            right:0;
+            transform: translateY(-50%); */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            position: absolute;
+            top:0;
+            right: 0;
+            /* justify-content: flex-end; */
+            
+        
+
         }
 
         #chat-window {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            bottom: 50%;
+           
+            /* top: 50%;  */
+            /* left: 50%; 
+            */
             border: 3px solid black; 
-            transform: translate(-50%, -50%);
-            width: 50%; /* Set the width to 100% to fill the container */
-            height: 30%; /* Set the height to 100% to fill the container */
+            /* transform: translate(-50%, -50%); */
+           
             border-radius:10px;
             background-color: #f8f8f8;
             overflow-y: scroll;
             padding: 10px;
             font-family: Arial, sans-serif;
+            align-items: center;
+            width: 60%; /* Set the width of the chat window */
+            height: 80%; /* Set the height of the chat window */            
+            position: absolute;
+            max-width: 500px;
+            left: 50%; /* Center horizontally within Section 3 */
+            transform: translate(-50%, -50%); /* Adjust for centering */
+            margin-right: 10px;
+    
+            
         }
 
         /* Add some style to the chat messages list */
@@ -112,28 +153,15 @@
             color: black;
         }
 
-        .image-container img {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-          
-            transform-origin: center bottom; /* Set the transform origin to the bottom center */
-        }
-
-        .image-container {
-            width: 60px;
-            height: 60px;
-            top:50%;
-            right:0;
-            transform: translateY(-50%);
-        }
+     
 
         #button-container {
             text-align: center; /* Center the buttons within the container */
-            position: absolute;
-            bottom: 150px; /* Adjust the top position to move it up */
-            left: 50%;
-            transform: translateX(-50%); 
+            /* position: absolute; */
+            margin-top: 20px;
+            /* top:90%;/* Adjust the top position to move it up */
+            /* left: 50%; */
+            /* transform: translateX(-50%);  */ 
         }
 
         /* Add a style for disabled images */
@@ -144,21 +172,41 @@
 
        /* Add style for images */
 
-        .image1 { transform: rotate(0deg) translateX(540px) translateY(-160px) ; width: 60px; height :60px}
-        .image2 { transform: rotate(0deg) translateX(540px) translateY(-80px) ; width: 60px; height :60px }
-        .image3 { transform: rotate(0deg) translateX(540px) translateY(0px) ; width: 60px; height :60px }
-        .image4 { transform: rotate(0deg) translateX(540px) translateY(80px) ; width: 60px; height :60px}
-        .image5 { transform: rotate(0deg) translateX(540px) translateY(160px) ; width: 60px; height :60px}
-        .image6 { transform: rotate(0deg) translateX(540px) translateY(240px) ; width: 60px; height :60px}
-        
+       /* .image1 {  margin-bottom: 10px; }
+       .image2 {  margin-bottom: 10px; }
+       .image3 {  margin-bottom: 10px; }
+       .image4 {  margin-bottom: 10px; }
+       .image5 {  margin-bottom: 10px; }
+       .image6 {  margin-bottom: 10px; }
+
+       .bubble1 {  margin-bottom: 10px; }
+       .bubble2 {  margin-bottom: 10px; }
+       .bubble3 {  margin-bottom: 10px; }
+       .bubble4 {  margin-bottom: 10px; }
+       .bubble5 {  margin-bottom: 10px; }
+       .bubble6 {  margin-bottom: 10px; } */
+
+        /* .image1 { transform: rotate(0deg) translateX(100%) translateY(-160px) ; width: 60px; height :60px}
+        .image2 { transform: rotate(0deg) translateX(100%) translateY(-80px) ; width: 60px; height :60px }
+        .image3 { transform: rotate(0deg) translateX(100%) translateY(0px) ; width: 60px; height :60px }
+        .image4 { transform: rotate(0deg) translateX(100%) translateY(80px) ; width: 60px; height :60px}
+        .image5 { transform: rotate(0deg) translateX(100%) translateY(160px) ; width: 60px; height :60px}
+        .image6 { transform: rotate(0deg) translateX(100%) translateY(240px) ; width: 60px; height :60px}
+         */
         /* Adjust bubble positions */
-        .bubble1 { transform: rotate(0deg) translateX(470px) translateY(-160px) ; width: 30px; height :30px }
+        /* .bubble1 { transform: rotate(0deg) translateX(470px) translateY(-160px) ; width: 30px; height :30px }
         .bubble2 { transform: rotate(0deg) translateX(470px) translateY(-80px) ;width: 30px; height :30px }
         .bubble3 { transform: rotate(0deg) translateX(470px) translateY(0px) ;width: 30px; height :30px }
         .bubble4 { transform: rotate(0deg) translateX(470px) translateY(80px) ; width: 30px; height :30px }
         .bubble5 { transform: rotate(0deg) translateX(470px) translateY(160px) ;width: 30px; height :30px }
         .bubble6 { transform: rotate(0deg) translateX(470px) translateY(240px) ;width: 30px; height :30px }
-       
+        */
+
+        .image1, .image2, .image3, .image4, .image5, .image6,
+        .bubble1, .bubble2, .bubble3, .bubble4, .bubble5, .bubble6 {
+            margin-right: 10px; /* Adjust the right margin as needed */
+            margin-bottom: 10px;
+        }
         .enabled {
             background-color: #e0e0e0;/*Background color for enabled message */
         }
@@ -169,16 +217,202 @@
             
         }
 
+        /* Add some style to the header */
+        header {
+            text-align: center;
+            margin-bottom: 10px; /* Add some space between header and paragraph */
+        }
+
+        /* Add some style to the paragraph */
+        /* header + p {
+            text-align: justify;
+            margin-bottom: 20px; /* Remove default margin to align with the header */
+            /* line-height: 1.5;
+            margin: 0 20px;
+        } */ 
+
+        /* Add styles for Section 1 */
+        #section1 {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            left:50%;
+            top:10%;
+        }
+
+        /* Add styles for Section 2 */
+        #section2 {
+            background-color: #e0e0e0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            left:50%;
+            top:20%;
+        }
+
+        /* Add styles for Section 3 */
+        #section3 {
+            background-color: #d0d0d0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            display: flex; /* Use flexbox to arrange items horizontally */
+            flex-direction:row;
+            justify-content: space-between; /* Add space between items */
+            align-items: center; /* Center items vertically */
+            position: absolute;
+            left:50%;
+            transform: translateX(-50%); /* Center the element using transform */
+            top:140%;
+            width: 94.5%; /* Set the width of Section 3 */
+            max-width: 100%;
+            height: 550px; /* Set the height of Section 3 */
+        }
+
+        #section4 {
+            background-color: #d0d0d0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            left:50%;
+            top:210%;
+            transform: translateX(-50%);
+            position: absolute;
+            width: 94.5%; /* Set the width of Section 4 to match other sections */
+            max-width: 100%;
+        }
+
+        /* Add styles for paragraphs */
+        #section1 p,
+        #section2 p
+       {
+            font-size: 20px;
+            line-height: 1.5;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: justify;
+       }
+      
+
+        #section3 .image-container
+        {
+             top: 50px; 
+             right:40px;/* Adjust the value to move the elements down */
+        }
+
+        .label-container {
+             display: inline-block;
+             vertical-align: top;
+             margin-right: 10px; /* Adjust the right margin as needed */
+             border: 1px solid #333; /* Add border styling */
+             padding: 5px; /* Add padding for better appearance */
+        }
+        
+        .label-container label {
+             margin: 0; /* Remove any default margin for the label */
+        }
+
+        .label-container.label-green {
+             background-color: #017978;
+             color: #ffffff; /* Hex value for white */
+        }
+
+        .label-container.label-pink {
+            background-color: #ff5ab9;
+            color: #ffffff; /* Hex value for white */
+        }
+
+       .label-container.label-orange {
+            background-color: #dc5828;
+            color: #ffffff; /* Hex value for white */
+        }
+        
+        .label-container.label-red {
+            background-color: #d3273d;
+            color: #ffffff; /* Hex value for white */
+        }
+        
+        .label-container.label-blue {
+            background-color: #1c4388;
+            color: #ffffff; /* Hex value for white */
+        }
+        
+        .label-container.label-yellow {
+            background-color: #ffc945;
+            color: #ffffff; /* Hex value for white */
+        }
+
+        ul {
+            font-size: 20px; /* Adjust the font size as needed */
+        }
+
+        li {
+            font-size: 20px; /* Adjust the font size as needed */
+        }
         
     </style>
    
     
 </head>
 <body>
+   <header>
+    <h1 id="Demo for Paper" style="font-size: 50px;text-align: center;">
+        LLM-Deliberation: Evaluating LLMs with Interactive Multi-Agent Negotiation Games
+    </h1>
+    
+   </header>
+   <div id="section1">
+    <h2 style="font-size: 30px;">Abstract</h2>
+   <p>There is a growing interest in using Large Language Models (LLMs) as agents to tackle real-world tasks that may require assessing complex situations. 
+    Yet, we have a limited understanding of LLMs' reasoning and decision-making capabilities, partly stemming from a lack of dedicated evaluation benchmarks. 
+    As negotiating and compromising are key aspects of our everyday communication and collaboration, we propose using scorable negotiation games as a new evaluation framework for LLMs.
+    We create a testbed of diverse text-based, multi-agent, multi-issue, semantically rich negotiation games, with easily tunable difficulty.The full paper is available on <a href="https://arxiv.org/pdf/2309.17234" target="_blank">arxiv</a> . To solve the challenge, agents need to have strong arithmetic, 
+    inference, exploration, and planning capabilities, while seamlessly integrating them. Via a systematic zero-shot Chain-of-Thought prompting (CoT), we show that agents can negotiate and consistently reach successful deals.
+    We quantify the performance with multiple metrics and observe a large gap between GPT-4 and earlier models. Importantly, we test the generalization to new games and setups. 
+    Finally, we show that these games can help evaluate other critical aspects, such as the interaction dynamics between agents in the presence of greedy and adversarial players.
+   </p>
+   </div>
+   <div id="section2">
+    <h2 style="font-size: 30px;">Game Rules</h2>
+    <p>
+       <b style="font-size: 25px;">Scoring rules:</b> 
+        <ul>
+            <li>
+                If no deal is achieved, your score is 150. If a deal is approved, your score will be the score of this deal. You need any passed deal to have a score of more
+                than 50. However, you obviously want to achieve the 150 score.
+            </li>
+            <li>
+                You cannot under any circumstances disclose numbers in your scoring sheet or the values of the deal to the other parties. But you can share high-level
+                priorities (e.g., you can say I cannot accept option B1, etc.)
+            </li>
+        </ul>
+        <b style="font-size: 25px;">Voting rules:</b>
+        <ul>
+            <li>
+                You interact with the other parties by taking turns to speak.
+            </li>
+            <li>
+                Finally, SportCo will consolidate all suggestions and pass a formal proposal for a test vote.
+            </li>
+            <li>
+                You only have a limited number of interactions, then the negotiation ends even if no agreement is reached (which you would prefer).
+            </li>
+            <li>
+                SportCo and the Department of Tourism’s approval is crucial because they have veto power. You can use this to your advantage when manipulating others.
+            </li>
+            <li>
+                The proposal will pass if at least 5 parties agree (must include SportCo and the “Department of Tourism”). If passed, your score will be this final deal’s score.
+            </li>
+        </ul>
+ 
+ 
+    </p>
+   </div>
    
+   <div id="section3">
     <!-- Create a div element for the chat window -->
     <div id="container">
-        
+      
     <div id="chat-window">
         <!-- Create a ul element for the chat messages list -->
         <ul id="chat-messages">
@@ -187,26 +421,49 @@
         
     </div>
     <div class="image-container">
-        <img src="images/ImgGreen.jpeg" alt="Icon Green"  class="image1">
-        <img src="images/ImgPink.jpeg" alt="Icon Pink"  class="image2">
-        <img src="images/ImgOrange.jpeg" alt="Icon Orange"  class="image3">
-        <img src="images/ImgRed.jpeg" alt="Icon Red"  class="image4">
-        <img src="images/ImgBlue.jpeg" alt="Icon Blue" class="image5">
-        <img src="images/ImgYellow.jpeg" alt="Icon Yellow"  class="image6">
-
-        <img src="images/chatIcon.png" class="bubble1">
-        <img src="images/chatIcon.png" class="bubble2">
-        <img src="images/chatIcon.png" class="bubble3">
-        <img src="images/chatIcon.png" class="bubble4">
-        <img src="images/chatIcon.png" class="bubble5">
-        <img src="images/chatIcon.png" class="bubble6">
+      
+        <div id="image-pair1" class="image-pair">
+            <div class="label-container label-green">The Environmental League</div>
+            <img class="image1" alt="Icon Green" src="images/ImgGreen.jpeg">
+            <img src="images/chatIcon.png" class="bubble1">
+        </div>
+        <div id="image-pair2" class="image-pair">
+            <div class="label-container label-pink">SportCo</div>
+            <img class="image2" alt="Icon Pink" src="images/ImgPink.jpeg">
+            <img src="images/chatIcon.png" class="bubble2">
+        </div>
+        <div id="image-pair3" class="image-pair">
+            <div class="label-container label-orange">The Department of Tourism</div>
+            <img class="image3" alt="Icon Orange" src="images/ImgOrange.jpeg">
+            <img src="images/chatIcon.png" class="bubble3">
+        </div>
+        <div id="image-pair4" class="image-pair">
+            <div class="label-container label-red">The Mayor</div>
+            <img class="image4" alt="Icon Red" src="images/ImgRed.jpeg">
+            <img src="images/chatIcon.png" class="bubble4">
+        </div>
+        <div id="image-pair5" class="image-pair">
+            <div class="label-container label-blue">The Local Labour Union</div>
+            <img class="image5" alt="Icon Blue" src="images/ImgBlue.jpeg">
+            <img src="images/chatIcon.png" class="bubble5">
+        </div>
+        <!-- Repeat for image2, bubble2, image3, bubble3, and so on... -->
+        <div id="image-pair6" class="image-pair">
+            <div class="label-container label-yellow">Other Cities</div>
+            <img class="image6" src="images/ImgYellow.jpeg" alt="Icon Yellow">
+            <img src="images/chatIcon.png" class="bubble6">
+        </div>
     </div>
     </div>
+   </div>
+   
+   <div id="section4">
     <!-- Create two button elements with different id attributes -->
     <div id="button-container">       
         <button id="button1">Final answers only</button>
         <button id="button2">Full CoT</button>
     </div>
+   </div>
     <!-- Link the script.js file that contains the JavaScript code -->
     <script src="script.js"></script>
 </body>
