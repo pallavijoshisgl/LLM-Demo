@@ -473,12 +473,13 @@ function displayMessage() {
       image.classList.add("disabled-image");
     });
 
-    const allLabels = document.querySelectorAll('.label-container');
+    const allLabels = document.querySelectorAll(".label-container");
 
     // Disable all labels by setting the 'hidden' attribute
-    allLabels.forEach(label => {
-        label.style.pointerEvents = 'none';
-        label.style.opacity=0.5;
+    allLabels.forEach((label) => {
+      label.style.pointerEvents = "none";
+      label.style.opacity = 0.2;
+      label.style.fontWeight='normal';
     });
 
     //show image
@@ -517,138 +518,118 @@ function enableMessage(messageIndex) {
 }
 
 function showImageAsMessageType(messageType) {
-  
   returnToOriginalPosition();
-  
-  
+
   if (messageType == "person1") {
     // Get the image pair you want to move
     var pairToMove = document.getElementById("image-pair1"); // Adjust this selector based on your specific structure
     const image1 = document.querySelector(".image1");
     const bubble1 = document.querySelector(".bubble1");
-    const specificLabel = document.querySelector('.label-container.label-green');
-    
+    const specificLabel = document.querySelector(
+      ".label-container.label-green"
+    );
+
     
     pairToMove.style.marginRight = "0"; // Remove right margin
-    image1.style.transform = "translateX(calc(-100% - 1000px))";
-    bubble1.style.transform = "translateX(calc(-100% - 1000px))";
-    
-    
-    
+    image1.style.transform = "translateX(calc(-100% - 300px))";
+    bubble1.style.transform = "translateX(calc(-100% - 300px))";
 
     image1.classList.remove("disabled-image");
     bubble1.classList.remove("disabled-image");
-    specificLabel.style.pointerEvents='auto';
-    specificLabel.style.opacity=1;
-
-    
+    specificLabel.style.pointerEvents = "auto";
+    specificLabel.style.opacity = 1;
+    specificLabel.style.fontWeight='bold';
   } else if (messageType == "person2") {
     // Get the image pair you want to move
     var pairToMove = document.getElementById("image-pair2"); // Adjust this selector based on your specific structure
     const image2 = document.querySelector(".image2");
     const bubble2 = document.querySelector(".bubble2");
-    const specificLabel = document.querySelector('.label-container.label-pink');
-    
-    
+    const specificLabel = document.querySelector(".label-container.label-pink");
+
     
     pairToMove.style.marginRight = "0"; // Remove right margin
-    image2.style.transform = "translateX(calc(-100% - 1000px))";
-    bubble2.style.transform = "translateX(calc(-100% - 1000px))";
-    
+    image2.style.transform = "translateX(calc(-100% - 300px))";
+    bubble2.style.transform = "translateX(calc(-100% - 300px))";
 
     image2.classList.remove("disabled-image");
     bubble2.classList.remove("disabled-image");
-    specificLabel.style.pointerEvents='auto';
-    specificLabel.style.opacity=1;
-
-
-   
+    specificLabel.style.pointerEvents = "auto";
+    specificLabel.style.opacity = 1;
+    specificLabel.style.fontWeight='bold';
   } else if (messageType == "person3") {
     // Get the image pair you want to move
     var pairToMove = document.getElementById("image-pair3"); // Adjust this selector based on your specific structure
     const image3 = document.querySelector(".image3");
     const bubble3 = document.querySelector(".bubble3");
-    const specificLabel = document.querySelector('.label-container.label-orange');
+    const specificLabel = document.querySelector(
+      ".label-container.label-orange"
+    );
+
     
-    
-   
     pairToMove.style.marginRight = "0"; // Remove right margin
-    image3.style.transform = "translateX(calc(-100% - 1000px))";
-    bubble3.style.transform = "translateX(calc(-100% - 1000px))";
-   
+    image3.style.transform = "translateX(calc(-100% - 300px))";
+    bubble3.style.transform = "translateX(calc(-100% - 300px))";
+
     image3.classList.remove("disabled-image");
     bubble3.classList.remove("disabled-image");
-    specificLabel.style.pointerEvents='auto';
-    specificLabel.style.opacity=1;
-
-
-    
+    specificLabel.style.pointerEvents = "auto";
+    specificLabel.style.opacity = 1;
+    specificLabel.style.fontWeight='bold';
   } else if (messageType == "person4") {
     // Get the image pair you want to move
     var pairToMove = document.getElementById("image-pair4"); // Adjust this selector based on your specific structure
     const image4 = document.querySelector(".image4");
     const bubble4 = document.querySelector(".bubble4");
-    const specificLabel = document.querySelector('.label-container.label-red');
-    
-    
-    // Set the new position using the translateX transform
+    const specificLabel = document.querySelector(".label-container.label-red");
 
+    // Set the new position using the translateX transform
     pairToMove.style.marginRight = "0"; // Remove right margin
-    image4.style.transform = "translateX(calc(-100% - 1000px))";
-    bubble4.style.transform = "translateX(calc(-100% - 1000px))";
-    
+    image4.style.transform = "translateX(calc(-100% - 300px))";
+    bubble4.style.transform = "translateX(calc(-100% - 300px))";
+
     image4.classList.remove("disabled-image");
     bubble4.classList.remove("disabled-image");
-    specificLabel.style.pointerEvents='auto';
-    specificLabel.style.opacity=1;
-
-
-    
+    specificLabel.style.pointerEvents = "auto";
+    specificLabel.style.opacity = 1;
+    specificLabel.style.fontWeight='bold';
   } else if (messageType == "person5") {
     // Get the image pair you want to move
     var pairToMove = document.getElementById("image-pair5"); // Adjust this selector based on your specific structure
     const image5 = document.querySelector(".image5");
     const bubble5 = document.querySelector(".bubble5");
-    const specificLabel = document.querySelector('.label-container.label-blue');
+    const specificLabel = document.querySelector(".label-container.label-blue");
 
-
-    // Set the new position using the translateX transform
-
+    // Set the new position using the translateX transform   
     pairToMove.style.marginRight = "0"; // Remove right margin
-    image5.style.transform = "translateX(calc(-100% - 1000px))";
-    bubble5.style.transform = "translateX(calc(-100% - 1000px))";
-    
+    image5.style.transform = "translateX(calc(-100% - 300px))";
+    bubble5.style.transform = "translateX(calc(-100% - 300px))";
+
     image5.classList.remove("disabled-image");
     bubble5.classList.remove("disabled-image");
-    specificLabel.style.pointerEvents='auto';
-    specificLabel.style.opacity=1;
-
-
-    
+    specificLabel.style.pointerEvents = "auto";
+    specificLabel.style.opacity = 1;
+    specificLabel.style.fontWeight='bold';
   } else if (messageType == "person6") {
     // Get the image pair you want to move
     var pairToMove = document.getElementById("image-pair6"); // Adjust this selector based on your specific structure
     const bubble6 = document.querySelector(".bubble6");
     const image6 = document.querySelector(".image6");
-    const specificLabel = document.querySelector('.label-container.label-yellow');
+    const specificLabel = document.querySelector(
+      ".label-container.label-yellow"
+    );
 
-    // Set the new position using the translateX transform
+    // Set the new position using the translateX transform  
     pairToMove.style.marginRight = "0"; // Remove right margin
-    image6.style.transform = "translateX(calc(-100% - 1000px))";
-    bubble6.style.transform = "translateX(calc(-100% - 1000px))";
-    specificLabel.style.pointerEvents='auto';
-    specificLabel.style.opacity=1;
-
-    
-    
-
+    image6.style.transform = "translateX(calc(-100% - 300px))";
+    bubble6.style.transform = "translateX(calc(-100% - 300px))";
+    specificLabel.style.pointerEvents = "auto";
+    specificLabel.style.opacity = 1;
+    specificLabel.style.fontWeight='bold';
 
     image6.classList.remove("disabled-image");
     bubble6.classList.remove("disabled-image");
 
-    
     // //bubbles
-    
   }
   // JavaScript to change the border color
   const chatWindow = document.getElementById("chat-window");
