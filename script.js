@@ -479,7 +479,7 @@ function displayMessage() {
     allLabels.forEach((label) => {
       label.style.pointerEvents = "none";
       label.style.opacity = 0.2;
-      label.style.fontWeight='normal';
+      label.style.fontWeight = "normal";
     });
 
     //show image
@@ -488,7 +488,7 @@ function displayMessage() {
     var li = document.createElement("li");
     // Add a class to the list item element based on the message type
     li.classList.add(message.type);
-
+    disableAllMessages();
     //enableOnlyParticularMessage
     enableMessage(messageIndex);
     // Append the list item element to the chat messages list
@@ -496,31 +496,54 @@ function displayMessage() {
     // Scroll to the bottom of the chat messages list
     document.getElementById("chat-messages").scrollTop =
       document.getElementById("chat-messages").scrollHeight;
+
+    //alert(document.getElementById("chat-messages").scrollHeight);
     // Do not increment the message index by one here
   }
 }
+
+function disableAllMessages() {
+    // Get all chat messages
+    const chatMessages = document.querySelectorAll("#chat-messages li");
+  
+    // Loop through each message and remove a specific class (replace 'your-class' with the actual class)
+    chatMessages.forEach(message => {
+      message.classList.remove("enabled"); // Remove the desired class
+      message.classList.add("disabled");
+    });
+  }
 
 function enableMessage(messageIndex) {
   //Get all chat messages
   const chatMessages = document.querySelectorAll("#chat-messages li");
 
-  //Loop through each message and enable/disable accordingly
-  chatMessages.forEach((message, index) => {
-    if (index == messageIndex) {
-      message.classList.add("enabled");
-      message.classList.remove("disabled");
-    } else {
-      // Disable other message types
-      message.classList.remove("enabled");
-      message.classList.add("disabled");
-    }
-  });
+   // Check if the index is within the valid range
+   if (messageIndex >= 0 && messageIndex < chatMessages.length) {
+    // Get the specific li element based on the index
+    const messageElement = chatMessages.item(messageIndex);
+
+  
+    messageElement.classList.add("enabled");
+    messageElement.classList.remove("disabled");
+   }
+//   //Loop through each message and enable/disable accordingly
+//   chatMessages.forEach((message, index) => {
+//     if (index == messageIndex) {
+//       message.classList.add("enabled");
+//       message.classList.remove("disabled");
+      
+//     } else {
+//       // Disable other message types
+//       message.classList.remove("enabled");
+//       message.classList.add("disabled");
+//     }
+//   });
 }
 
 function showImageAsMessageType(messageType) {
   returnToOriginalPosition();
 
-  if (messageType == "person1") {
+  if (messageType == "person1") {   
     // Get the image pair you want to move
     var pairToMove = document.getElementById("image-pair1"); // Adjust this selector based on your specific structure
     const image1 = document.querySelector(".image1");
@@ -529,16 +552,15 @@ function showImageAsMessageType(messageType) {
       ".label-container.label-green"
     );
 
-    
     pairToMove.style.marginRight = "0"; // Remove right margin
     image1.style.transform = "translateX(calc(-100% - 300px))";
     bubble1.style.transform = "translateX(calc(-100% - 300px))";
-
+    
     image1.classList.remove("disabled-image");
     bubble1.classList.remove("disabled-image");
     specificLabel.style.pointerEvents = "auto";
     specificLabel.style.opacity = 1;
-    specificLabel.style.fontWeight='bold';
+    specificLabel.style.fontWeight = "bold";
   } else if (messageType == "person2") {
     // Get the image pair you want to move
     var pairToMove = document.getElementById("image-pair2"); // Adjust this selector based on your specific structure
@@ -546,7 +568,6 @@ function showImageAsMessageType(messageType) {
     const bubble2 = document.querySelector(".bubble2");
     const specificLabel = document.querySelector(".label-container.label-pink");
 
-    
     pairToMove.style.marginRight = "0"; // Remove right margin
     image2.style.transform = "translateX(calc(-100% - 300px))";
     bubble2.style.transform = "translateX(calc(-100% - 300px))";
@@ -555,7 +576,7 @@ function showImageAsMessageType(messageType) {
     bubble2.classList.remove("disabled-image");
     specificLabel.style.pointerEvents = "auto";
     specificLabel.style.opacity = 1;
-    specificLabel.style.fontWeight='bold';
+    specificLabel.style.fontWeight = "bold";
   } else if (messageType == "person3") {
     // Get the image pair you want to move
     var pairToMove = document.getElementById("image-pair3"); // Adjust this selector based on your specific structure
@@ -565,7 +586,6 @@ function showImageAsMessageType(messageType) {
       ".label-container.label-orange"
     );
 
-    
     pairToMove.style.marginRight = "0"; // Remove right margin
     image3.style.transform = "translateX(calc(-100% - 300px))";
     bubble3.style.transform = "translateX(calc(-100% - 300px))";
@@ -574,7 +594,7 @@ function showImageAsMessageType(messageType) {
     bubble3.classList.remove("disabled-image");
     specificLabel.style.pointerEvents = "auto";
     specificLabel.style.opacity = 1;
-    specificLabel.style.fontWeight='bold';
+    specificLabel.style.fontWeight = "bold";
   } else if (messageType == "person4") {
     // Get the image pair you want to move
     var pairToMove = document.getElementById("image-pair4"); // Adjust this selector based on your specific structure
@@ -591,7 +611,7 @@ function showImageAsMessageType(messageType) {
     bubble4.classList.remove("disabled-image");
     specificLabel.style.pointerEvents = "auto";
     specificLabel.style.opacity = 1;
-    specificLabel.style.fontWeight='bold';
+    specificLabel.style.fontWeight = "bold";
   } else if (messageType == "person5") {
     // Get the image pair you want to move
     var pairToMove = document.getElementById("image-pair5"); // Adjust this selector based on your specific structure
@@ -599,7 +619,7 @@ function showImageAsMessageType(messageType) {
     const bubble5 = document.querySelector(".bubble5");
     const specificLabel = document.querySelector(".label-container.label-blue");
 
-    // Set the new position using the translateX transform   
+    // Set the new position using the translateX transform
     pairToMove.style.marginRight = "0"; // Remove right margin
     image5.style.transform = "translateX(calc(-100% - 300px))";
     bubble5.style.transform = "translateX(calc(-100% - 300px))";
@@ -608,7 +628,7 @@ function showImageAsMessageType(messageType) {
     bubble5.classList.remove("disabled-image");
     specificLabel.style.pointerEvents = "auto";
     specificLabel.style.opacity = 1;
-    specificLabel.style.fontWeight='bold';
+    specificLabel.style.fontWeight = "bold";
   } else if (messageType == "person6") {
     // Get the image pair you want to move
     var pairToMove = document.getElementById("image-pair6"); // Adjust this selector based on your specific structure
@@ -618,13 +638,13 @@ function showImageAsMessageType(messageType) {
       ".label-container.label-yellow"
     );
 
-    // Set the new position using the translateX transform  
+    // Set the new position using the translateX transform
     pairToMove.style.marginRight = "0"; // Remove right margin
     image6.style.transform = "translateX(calc(-100% - 300px))";
     bubble6.style.transform = "translateX(calc(-100% - 300px))";
     specificLabel.style.pointerEvents = "auto";
     specificLabel.style.opacity = 1;
-    specificLabel.style.fontWeight='bold';
+    specificLabel.style.fontWeight = "bold";
 
     image6.classList.remove("disabled-image");
     bubble6.classList.remove("disabled-image");
